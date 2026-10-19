@@ -1,0 +1,18 @@
+Ice Breaker Agent
+Copyright (c) 2025 Uğur Özdemir
+
+This project starts from the "Ice Breaker" project of the LangChain course by
+Eden Marco (https://github.com/emarco177/langchain-course), which is licensed
+under the Apache License, Version 2.0. A copy of that license is in
+LICENSES/Apache-2.0.txt.
+
+The following files are derived from that course code and were changed by
+Uğur Özdemir. Each file states its changes in its header:
+
+  - ice_breaker.py
+  - agents/linkedin_lookup_agent.py
+  - third_parties/linkedin.py
+  - tools/tools.py (the get_profile_url_tavily function)
+
+All other files were written by Uğur Özdemir and are released under the MIT
+License (see LICENSE).

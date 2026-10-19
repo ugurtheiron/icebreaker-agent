@@ -1,0 +1,49 @@
+{
+  "public_identifier": "jane-doe-example",
+  "profile_pic_url": null,
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "full_name": "Jane Doe",
+  "follower_count": 1200,
+  "occupation": "Senior Data Engineer at Example Corp",
+  "headline": "Data engineer building analytics platforms",
+  "summary": "Synthetic sample profile used for offline runs and tests. All names, employers and details are invented.",
+  "country": "US",
+  "country_full_name": "United States",
+  "city": "Springfield",
+  "state": "Illinois",
+  "experiences": [
+    {
+      "starts_at": {"day": 1, "month": 3, "year": 2021},
+      "ends_at": null,
+      "company": "Example Corp",
+      "company_linkedin_profile_url": "https://example.com/company/example-corp",
+      "title": "Senior Data Engineer",
+      "description": "Builds batch and streaming pipelines for the analytics team.",
+      "location": "Springfield, Illinois, United States"
+    },
+    {
+      "starts_at": {"day": 1, "month": 6, "year": 2018},
+      "ends_at": {"day": 28, "month": 2, "year": 2021},
+      "company": "Sample Analytics Ltd",
+      "company_linkedin_profile_url": "https://example.com/company/sample-analytics",
+      "title": "Data Analyst",
+      "description": "Dashboards and ad-hoc analysis for retail clients.",
+      "location": "Chicago, Illinois, United States"
+    }
+  ],
+  "education": [
+    {
+      "starts_at": {"day": 1, "month": 9, "year": 2014},
+      "ends_at": {"day": 30, "month": 6, "year": 2018},
+      "school": "Example State University",
+      "degree_name": "Bachelor's degree",
+      "field_of_study": "Computer Science"
+    }
+  ],
+  "languages": ["English", "Spanish"],
+  "skills": ["Python", "SQL", "Apache Spark", "Data Modeling", "Mentoring"],
+  "interests": [],
+  "articles": [],
+  "recommendations": []
+}
