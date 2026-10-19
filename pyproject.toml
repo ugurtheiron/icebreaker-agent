@@ -1,0 +1,12 @@
+# Tool configuration only; this repository is a set of scripts, not an installable package.
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+# ruff's default rule set (pycodestyle errors, pyflakes) plus import sorting.
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
