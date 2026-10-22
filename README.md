@@ -106,6 +106,14 @@ Built with Python, LangChain 0.3, OpenAI, Ollama, Tavily, Firecrawl, Pydantic, p
 - **No evaluation.** The category list is a fixed example taxonomy and the classification accuracy of the local model has not been measured.
 - **Jira helper.** It sends the token as a Bearer header (fits Jira Data Center personal access tokens or OAuth 2.0 access tokens); Jira Cloud API tokens use Basic auth and are not supported.
 
+## Contributing
+
+Issues and pull requests are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Security
+
+To report a vulnerability privately, see [SECURITY.md](SECURITY.md).
+
 ## Credits and license
 
 The project starts from the "Ice Breaker" part of Eden Marco's [LangChain course](https://github.com/emarco177/langchain-course), which is licensed under the Apache License 2.0. Four files are derived from that code and were changed (`ice_breaker.py`, `agents/linkedin_lookup_agent.py`, `third_parties/linkedin.py` and the `get_profile_url_tavily` function in `tools/tools.py`); each states its changes in its header. The product classification, output parsers, Firecrawl extractor, Jira helper, tests and CI are original work.

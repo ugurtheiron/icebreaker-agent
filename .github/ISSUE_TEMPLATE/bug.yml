@@ -1,0 +1,56 @@
+name: Bug report
+description: Something does not work as documented
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please do **not** paste API keys, tokens or personal data. For security problems, follow [SECURITY.md](https://github.com/ugurtheiron/icebreaker-agent/security/policy) instead of opening an issue.
+  - type: dropdown
+    id: entrypoint
+    attributes:
+      label: Entry point
+      description: Which part of the project is affected?
+      options:
+        - ice_breaker.py
+        - agents/linkedin_lookup_agent.py
+        - ice_breaker_v2.py / parsers.py
+        - tools/tools.py (Firecrawl)
+        - third_parties/jira.py
+        - Tests, CI or documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you run, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The exact commands you ran. If the problem shows without any API key (for example `pytest` or `ice_breaker.py --mock`), say so.
+      placeholder: |
+        1. python -m venv .venv && pip install -r requirements-dev.txt
+        2. python ice_breaker.py --mock
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error output
+      description: Paste the traceback or message. Remove any keys or personal data first.
+      render: text
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system and Python version.
+      placeholder: Windows 11, Python 3.12.10
+    validations:
+      required: true
