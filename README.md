@@ -101,7 +101,7 @@ Built with Python, LangChain 0.3, OpenAI, Ollama, Tavily, Firecrawl, Pydantic, p
 
 - **Paid and keyed services.** OpenAI, Tavily, Proxycurl and Firecrawl need your own accounts and keys, and calls to them can cost money.
 - **Proxycurl is discontinued.** The service shut down in July 2025, so `ice_breaker.py --url` cannot return data any more; `--mock` is the working path. Fetching LinkedIn data is also subject to LinkedIn's terms.
-- **Old library line.** Dependencies are pinned to the LangChain 0.3 releases the code was written against; newer major versions were not tried. `parsers.py` uses Pydantic's `root_validator`, which is deprecated and prints a warning in the tests.
+- **Old library line.** Dependencies are pinned to the LangChain 0.3 releases the code was written against; newer major versions were not tried.
 - **External APIs are only mocked in tests.** The Firecrawl call follows the `firecrawl-py` 1.9.0 interface, and the Proxycurl, Tavily, OpenAI and Ollama paths were not run against the live services for this repository.
 - **No evaluation.** The category list is a fixed example taxonomy and the classification accuracy of the local model has not been measured.
 - **Jira helper.** It sends the token as a Bearer header (fits Jira Data Center personal access tokens or OAuth 2.0 access tokens); Jira Cloud API tokens use Basic auth and are not supported.

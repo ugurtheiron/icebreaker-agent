@@ -1,6 +1,6 @@
 from typing import Optional, Union
 
-from pydantic import BaseModel, Field, root_validator
+from pydantic import BaseModel, Field, model_validator
 
 # Define the allowed categories
 ALLOWED_CATEGORIES = [
@@ -65,7 +65,8 @@ class Category(BaseModel):
     predicted_category: str = Field(description="Predicted category")
     prediction_possibility: Optional[float] = Field(description="Predicted category possibility between 0 and 1")
 
-    @root_validator(pre=True)
+    @model_validator(mode="before")
+    @classmethod
     def validate_category(cls, values):
         category = values.get("predicted_category")
         if category not in ALLOWED_CATEGORIES:

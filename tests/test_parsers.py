@@ -41,3 +41,11 @@ def test_prompt_lists_exactly_the_allowed_categories():
     listed = re.findall(r'"([^"]+)"', block)
 
     assert listed == ALLOWED_CATEGORIES
+
+
+def test_category_validator_reports_the_rejected_value_and_missing_category():
+    with pytest.raises(ValidationError, match="Invalid category: Gardening"):
+        Category.model_validate({"predicted_category": "Gardening", "prediction_possibility": 0.5})
+
+    with pytest.raises(ValidationError, match="Invalid category: None"):
+        Category.model_validate({"prediction_possibility": 0.5})
