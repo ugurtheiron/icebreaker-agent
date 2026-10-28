@@ -74,7 +74,7 @@ ruff check .
 pytest
 ```
 
-The 10 tests are offline: the HTTP client and Firecrawl are replaced with fakes, so nothing calls a paid API. They cover the Pydantic output parsing and category validation (including that the prompt lists exactly the allowed categories), loading of the bundled profile from any working directory, the missing-key errors, the request that is sent to Proxycurl, the per-URL error handling of the Firecrawl extractor, and Jira field extraction. The same two commands run in [GitHub Actions](.github/workflows/ci.yml) on every push to `main` and every pull request.
+The tests are offline: the HTTP client and Firecrawl are replaced with fakes, so nothing calls a paid API. They cover the Pydantic output parsing and category validation (including that the prompt lists exactly the allowed categories), loading of the bundled profile from any working directory, the missing-key errors, the request that is sent to Proxycurl, the per-URL error handling of the Firecrawl extractor, and Jira field extraction. The same two commands run in [GitHub Actions](.github/workflows/ci.yml) on every push to `main` and every pull request.
 
 ## Project layout
 
