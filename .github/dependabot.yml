@@ -7,12 +7,15 @@ updates:
     commit-message:
       prefix: "chore"
       include: scope
-    # The LangChain packages are pinned together; one grouped pull request
-    # keeps their updates from arriving as many separate ones.
+    # Minor and patch updates arrive in one grouped pull request. Major
+    # version bumps get a separate one so they can be tested on their own;
+    # the LangChain packages are pinned together, so their majors still
+    # arrive together.
     groups:
-      python-dependencies:
-        patterns:
-          - "*"
+      python-minor-patch:
+        update-types: ["minor", "patch"]
+      python-major:
+        update-types: ["major"]
 
   - package-ecosystem: github-actions
     directory: "/"
@@ -20,6 +23,7 @@ updates:
       interval: weekly
     commit-message:
       prefix: "ci"
+    # Actions are pinned to major tags, so every update here is a major one.
     groups:
       github-actions:
         patterns:
