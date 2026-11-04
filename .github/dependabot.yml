@@ -7,14 +7,19 @@ updates:
     commit-message:
       prefix: "chore"
       include: scope
-    # Minor and patch updates arrive in one grouped pull request. Major
-    # version bumps get a separate one so they can be tested on their own;
-    # the LangChain packages are pinned together, so their majors still
-    # arrive together.
+    # The LangChain packages are pinned against each other, and some of their
+    # minor releases need a new langchain-core major, so splitting them by
+    # update type gives pull requests that cannot resolve. They get a group
+    # of their own, whatever the update type. For everything else, minor and
+    # patch updates arrive in one pull request and majors in another.
     groups:
+      langchain:
+        patterns: ["langchain*"]
       python-minor-patch:
+        exclude-patterns: ["langchain*"]
         update-types: ["minor", "patch"]
       python-major:
+        exclude-patterns: ["langchain*"]
         update-types: ["major"]
 
   - package-ecosystem: github-actions
