@@ -1,6 +1,20 @@
-import pytest
-from langchain_core.callbacks import BaseCallbackHandler
-from langchain_core.language_models.fake_chat_models import FakeListChatModel
+import os
+
+# Keep the suite offline even when the shell or a local .env turns LangSmith
+# tracing on. The modules under test call load_dotenv() on import, and
+# load_dotenv() does not override variables that are already set, so pinning
+# them here (before anything from LangChain is imported) wins over both.
+for _name in (
+    "LANGCHAIN_TRACING_V2",
+    "LANGSMITH_TRACING_V2",
+    "LANGCHAIN_TRACING",
+    "LANGSMITH_TRACING",
+):
+    os.environ[_name] = "false"
+
+import pytest  # noqa: E402
+from langchain_core.callbacks import BaseCallbackHandler  # noqa: E402
+from langchain_core.language_models.fake_chat_models import FakeListChatModel  # noqa: E402
 
 
 class _PromptRecorder(BaseCallbackHandler):

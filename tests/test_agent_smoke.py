@@ -19,7 +19,7 @@ REACT_PROMPT = PromptTemplate.from_template(
     "Question: {input}\n"
     "Thought:{agent_scratchpad}"
 )
-PROFILE_URL = "https://www.linkedin.com/in/jane-doe-example/"
+PROFILE_URL = "https://example.com/in/jane-doe-example/"
 SEARCH_RESULT = f"[{{'url': '{PROFILE_URL}', 'content': 'Jane Doe - Software Engineer'}}]"
 
 
